@@ -1,0 +1,689 @@
+david@MacBook-Pro-de-David mi-perfil-web % git init
+Initialized empty Git repository in /Users/david/mi-perfil-web/.git/
+david@MacBook-Pro-de-David mi-perfil-web % git add .
+
+david@MacBook-Pro-de-David mi-perfil-web % git commit -m "Initial commit: Estructura básica del perfil"
+
+[main (root-commit) 938afbd] Initial commit: Estructura básica del perfil
+ 3 files changed, 46 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 index.html
+ create mode 100644 style.css
+david@MacBook-Pro-de-David mi-perfil-web % git remote add origin https://github.com/dgutlop/HerramientasColaborativas
+david@MacBook-Pro-de-David mi-perfil-web % git remote -v
+
+origin  https://github.com/dgutlop/HerramientasColaborativas (fetch)
+origin  https://github.com/dgutlop/HerramientasColaborativas (push)
+david@MacBook-Pro-de-David mi-perfil-web % git remote add origin https://github.com/dgutlop/HerramientasColaborativas.git
+error: remote origin already exists.
+david@MacBook-Pro-de-David mi-perfil-web % git branch -M main
+
+david@MacBook-Pro-de-David mi-perfil-web % git push -u origin main
+
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 784 bytes | 784.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/dgutlop/HerramientasColaborativas
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+david@MacBook-Pro-de-David mi-perfil-web % git checkout -b feature/habilidades
+
+Switched to a new branch 'feature/habilidades'
+david@MacBook-Pro-de-David mi-perfil-web % git branch
+
+* feature/habilidades
+  main
+david@MacBook-Pro-de-David mi-perfil-web % git add index.html
+git commit -m "Añade lista de habilidades al perfil"
+
+[feature/habilidades d951a13] Añade lista de habilidades al perfil
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+david@MacBook-Pro-de-David mi-perfil-web % git add style.css
+git commit -m "Estilos para la lista de habilidades"
+
+[feature/habilidades 687c736] Estilos para la lista de habilidades
+ 1 file changed, 6 insertions(+)
+david@MacBook-Pro-de-David mi-perfil-web % git push -u origin feature/habilidades
+
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 763 bytes | 763.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'feature/habilidades' on GitHub by visiting:
+remote:      https://github.com/dgutlop/HerramientasColaborativas/pull/new/feature/habilidades
+remote: 
+To https://github.com/dgutlop/HerramientasColaborativas
+ * [new branch]      feature/habilidades -> feature/habilidades
+branch 'feature/habilidades' set up to track 'origin/feature/habilidades'.
+david@MacBook-Pro-de-David mi-perfil-web % git checkout master
+
+error: pathspec 'master' did not match any file(s) known to git
+david@MacBook-Pro-de-David mi-perfil-web % git checkout main
+
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+david@MacBook-Pro-de-David mi-perfil-web % git branch
+
+  feature/habilidades
+* main
+david@MacBook-Pro-de-David mi-perfil-web % git checkout -b hotfix/color-header
+
+Switched to a new branch 'hotfix/color-header'
+david@MacBook-Pro-de-David mi-perfil-web % git branch
+
+  feature/habilidades
+* hotfix/color-header
+  main
+david@MacBook-Pro-de-David mi-perfil-web % git add style.css
+git commit -m "fix: corregido color corporativo en header"
+
+[hotfix/color-header f124ac6] fix: corregido color corporativo en header
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+david@MacBook-Pro-de-David mi-perfil-web % git checkout master
+git merge hotfix/color-header
+
+error: pathspec 'master' did not match any file(s) known to git
+Already up to date.
+david@MacBook-Pro-de-David mi-perfil-web % git branch
+
+  feature/habilidades
+* hotfix/color-header
+  main
+david@MacBook-Pro-de-David mi-perfil-web % git checkout main
+
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+david@MacBook-Pro-de-David mi-perfil-web % git merge hotfix/color-header
+
+Updating 938afbd..f124ac6
+Fast-forward
+ style.css | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+david@MacBook-Pro-de-David mi-perfil-web % git branch -d hotfix/color-header
+
+Deleted branch hotfix/color-header (was f124ac6).
+david@MacBook-Pro-de-David mi-perfil-web % git push origin main
+
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/dgutlop/HerramientasColaborativas
+   938afbd..f124ac6  main -> main
+david@MacBook-Pro-de-David mi-perfil-web % git checkout feature/habilidades
+
+Switched to branch 'feature/habilidades'
+Your branch is up to date with 'origin/feature/habilidades'.
+david@MacBook-Pro-de-David mi-perfil-web % git merge main
+
+Auto-merging style.css
+Merge made by the 'ort' strategy.
+ style.css | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+david@MacBook-Pro-de-David mi-perfil-web % <p class="tagline">Experto en Ramas</p>
+
+zsh: parse error near `\n'
+david@MacBook-Pro-de-David mi-perfil-web % git add index.html                     
+git commit -m "Cambia tagline a Experto en Ramas"
+
+[feature/habilidades 907d62f] Cambia tagline a Experto en Ramas
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+david@MacBook-Pro-de-David mi-perfil-web % git checkout main
+
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+david@MacBook-Pro-de-David mi-perfil-web % git add index.html
+git commit -m "Cambia tagline a Ninja de Git"
+
+[main 539bf6b] Cambia tagline a Ninja de Git
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+david@MacBook-Pro-de-David mi-perfil-web % git merge feature/habilidades
+
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+david@MacBook-Pro-de-David mi-perfil-web % git add index.html
+git commit
+
+[main 162a879] Merge branch 'feature/habilidades'
+david@MacBook-Pro-de-David mi-perfil-web % git push origin main
+git push origin feature/habilidades
+
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (12/12), 1.43 KiB | 1.43 MiB/s, done.
+Total 12 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
+To https://github.com/dgutlop/HerramientasColaborativas
+   f124ac6..162a879  main -> main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/dgutlop/HerramientasColaborativas
+   687c736..907d62f  feature/habilidades -> feature/habilidades
+david@MacBook-Pro-de-David mi-perfil-web % git status
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+david@MacBook-Pro-de-David mi-perfil-web % git checkout -b feature/contacto
+
+Switched to a new branch 'feature/contacto'
+david@MacBook-Pro-de-David mi-perfil-web % git status
+
+On branch feature/contacto
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+david@MacBook-Pro-de-David mi-perfil-web % git checkout main
+
+M       index.html
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+david@MacBook-Pro-de-David mi-perfil-web % git stash push -m "WIP formulario de contacto"
+
+Saved working directory and index state On main: WIP formulario de contacto
+david@MacBook-Pro-de-David mi-perfil-web % git status
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+david@MacBook-Pro-de-David mi-perfil-web % git add index.html
+git commit -m "Actualiza nombre de usuario"
+git push origin main
+
+[main a569f64] Actualiza nombre de usuario
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 369 bytes | 369.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/dgutlop/HerramientasColaborativas
+   162a879..a569f64  main -> main
+david@MacBook-Pro-de-David mi-perfil-web % git checkout feature/contacto
+git stash pop
+
+Switched to branch 'feature/contacto'
+On branch feature/contacto
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (a0c254f586a553ece76f0d81ae939bce9e775723)
+david@MacBook-Pro-de-David mi-perfil-web % git add index.html
+git commit -m "Añade formulario de contacto"
+git push -u origin feature/contacto
+
+[feature/contacto c9e01de] Añade formulario de contacto
+ 1 file changed, 7 insertions(+)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 491 bytes | 491.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'feature/contacto' on GitHub by visiting:
+remote:      https://github.com/dgutlop/HerramientasColaborativas/pull/new/feature/contacto
+remote: 
+To https://github.com/dgutlop/HerramientasColaborativas
+ * [new branch]      feature/contacto -> feature/contacto
+branch 'feature/contacto' set up to track 'origin/feature/contacto'.
+david@MacBook-Pro-de-David mi-perfil-web % git log --graph --oneline --all --decorate
+
+* c9e01de (HEAD -> feature/contacto, origin/feature/contacto) Añade formulario de contacto
+| * a569f64 (origin/main, main) Actualiza nombre de usuario
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+(END)
+* c9e01de (HEAD -> feature/contacto, origin/feature/contacto) Añade formulario de contacto
+| * a569f64 (origin/main, main) Actualiza nombre de usuario
+* c9e01de (HEAD -> feature/contacto, origin/feature/contacto) Añade formulario de contacto
+| * a569f64 (origin/main, main) Actualiza nombre de usuario
+* c9e01de (HEAD -> feature/contacto, origin/feature/contacto) Añade formulario de contacto
+| * a569f64 (origin/main, main) Actualiza nombre de usuario
+* c9e01de (HEAD -> feature/contacto, origin/feature/contacto) Añade formulario de contacto
+| * a569f64 (origin/main, main) Actualiza nombre de usuario
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+|/  
+*   162a879 Merge branch 'feature/habilidades'
+|\  
+| * 907d62f (origin/feature/habilidades, feature/habilidades) Cambia tagline a Experto en Ramas
+| *   9b0823a Merge branch 'main' into feature/habilidades
+| |\  
+| * | 687c736 Estilos para la lista de habilidades
+| * | d951a13 Añade lista de habilidades al perfil
+* | | 539bf6b Cambia tagline a Ninja de Git
+| |/  
+|/|   
+* | f124ac6 fix: corregido color corporativo en header
+|/  
+* 938afbd Initial commit: Estructura básica del perfil
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+david@MacBook-Pro-de-David mi-perfil-web % git config --global alias.adios "branch -d"
+
+david@MacBook-Pro-de-David mi-perfil-web % git config --global --get alias.adios
+
+branch -d
+david@MacBook-Pro-de-David mi-perfil-web % git checkout main
+
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+david@MacBook-Pro-de-David mi-perfil-web % git adios feature/contacto
+
+warning: deleting branch 'feature/contacto' that has been merged to
+         'refs/remotes/origin/feature/contacto', but not yet merged to HEAD
+Deleted branch feature/contacto (was c9e01de).
+david@MacBook-Pro-de-David mi-perfil-web % git diff
+
+diff --git a/style.css b/style.css
+index 862ce1c..523acb9 100644
+--- a/style.css
++++ b/style.css
+@@ -22,6 +22,7 @@ body {
+ .card-body {
+     padding: 20px;
+     text-align: center;
++    margin-top: 10px;
+ }
+ .skills {
+     list-style: none;
+david@MacBook-Pro-de-David mi-perfil-web % git log -S "Ninja" --oneline
+
+539bf6b Cambia tagline a Ninja de Git
+david@MacBook-Pro-de-David mi-perfil-web % git checkout main
+git pull origin main
+git status
+
+M       style.css
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+From https://github.com/dgutlop/HerramientasColaborativas
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+david@MacBook-Pro-de-David mi-perfil-web % git tag -a v1.0 -m "Primera versión oficial del perfil"
+
+david@MacBook-Pro-de-David mi-perfil-web % git tag
+
+v1.0
+david@MacBook-Pro-de-David mi-perfil-web % git add style.css
+git commit -m "Mejora estética: sombra de la tarjeta"
+
+[main c81a01f] Mejora estética: sombra de la tarjeta
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+david@MacBook-Pro-de-David mi-perfil-web % git tag v1.1
+
+david@MacBook-Pro-de-David mi-perfil-web % git push origin --tags
+
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 485 bytes | 485.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/dgutlop/HerramientasColaborativas
+ * [new tag]         v1.0 -> v1.0
+ * [new tag]         v1.1 -> v1.1
+david@MacBook-Pro-de-David mi-perfil-web % git checkout v1.0
+
+Note: switching to 'v1.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at a569f64 Actualiza nombre de usuario
+david@MacBook-Pro-de-David mi-perfil-web % git checkout main
+
+Previous HEAD position was a569f64 Actualiza nombre de usuario
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+david@MacBook-Pro-de-David mi-perfil-web % git branch
+
+  feature/habilidades
+* main
+david@MacBook-Pro-de-David mi-perfil-web % git branch -vv
+
+  feature/habilidades 907d62f [origin/feature/habilidades] Cambia tagline a Experto en Ramas
+* main                c81a01f [origin/main: ahead 1] Mejora estética: sombra de la tarjeta
+david@MacBook-Pro-de-David mi-perfil-web % git branch -r
+
+  origin/feature/contacto
+  origin/feature/habilidades
+  origin/main
+david@MacBook-Pro-de-David mi-perfil-web % git add index.html style.css
+git commit -m "Refactor CSS a metodología BEM"
+
+[main cec3df7] Refactor CSS a metodología BEM
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+david@MacBook-Pro-de-David mi-perfil-web % git push origin main
+
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 460 bytes | 460.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/dgutlop/HerramientasColaborativas
+   a569f64..cec3df7  main -> main
+david@MacBook-Pro-de-David mi-perfil-web % 
